@@ -10,7 +10,7 @@ def has_negatives(a):
         elif val < 0 and abs(val) in cache:
             arr.append(abs(val))
 
-    print(cache)
+
     return arr
 
 if __name__ == "__main__":
