@@ -3,14 +3,13 @@ class Ticket:
     def __init__(self, source, destination):
         self.source = source
         self.destination = destination
-        self.next = None
         
 
 
 def reconstruct_trip(tickets, length):
     cache = {}
     arr = [None] * length
-    completed = True
+    running = True
     curr = None
     
     for tick in tickets:
@@ -20,14 +19,14 @@ def reconstruct_trip(tickets, length):
         
     idx = 0
     
-    while completed is True:
-        completed = False
+    while running is True:
+        running = False
         for i, (key, val) in enumerate(cache.items()):
             if curr == key and curr != "NONE":
                 arr[idx] = curr
                 idx += 1
                 curr = val
-                completed = True
+                running = True
                 break
                 
 
